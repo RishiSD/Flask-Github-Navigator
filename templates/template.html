@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ search_term }}</h1>
+{% for repos in render_list %}
+<h2>{{ repos.index }}. {{ repos.repository_name }}</h2>
+<h3> Created {{ repos.created_at }}</h3>
+<a href="{{ repos.owner_url }}"><img src="{{ repos.avatar_url }}" alt="avatar" height="42" width="42"/></a>
+{{ repos.owner_login }}
+<h3>LastCommit</h3>
+{{ repos.sha }} {{ repos.commit_message }}  {{ repos.commit_author_name }}
+<hr/>
+{% endfor %}
+</body>
+</html>
